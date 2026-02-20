@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import Icon from '../components/Icon';
@@ -66,11 +66,9 @@ export default function CoordinacionDashboard() {
     const [selectedDocente, setSelectedDocente] = useState<Docente | null>(null);
     const [selectedAlumno, setSelectedAlumno] = useState<any | null>(null);
     const [selectedCarrera, setSelectedCarrera] = useState('contabilidad');
-    const [docenteTab, setDocenteTab] = useState<'horario' | 'planeacion' | 'desempeno' | 'carta'>('horario');
-    const [alumnoTab, setAlumnoTab] = useState<'expediente' | 'horario' | 'reportes' | 'desempeno'>('expediente');
     const [incidencias, setIncidencias] = useState(INCIDENCIAS_INIT);
     const [incidentForm, setIncidentForm] = useState({ tipo: 'Alumno', persona: '', descripcion: '', fecha: new Date().toISOString().split('T')[0] });
-    const [showNewEncuesta, setShowNewEncuesta] = useState(false);
+    const [, setShowNewEncuesta] = useState(false);
 
     const handleLogout = () => { logout(); navigate('/login'); };
 
